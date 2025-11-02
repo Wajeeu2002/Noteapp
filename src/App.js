@@ -24,12 +24,13 @@ export default function App() {
  
   return (
     <div className="App">
-      <h1 className="keeper">Keeper</h1>
+      <h1 className="keeper">Note Pad</h1>
        <Form onAdd ={addNote}/>
-       {notes.map((bee,index) => {
-  return <Note id={index} key={index}title={bee.title} content={bee.content} onDelete={deleteNote}/>;
-})}
-     
+       <div className="notes-container">
+         {notes.map((note,index) => {
+           return <Note id={index} key={index} title={note.title} content={note.content} onDelete={deleteNote}/>;
+         })}
+       </div>
       <Footer />
     </div>
   );
